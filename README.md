@@ -3,3 +3,7 @@
 2.关于 postion属性：4种属性值的描述：
   (1)https://www.cnblogs.com/520chensiqi/p/6540068.html
   (2)“子绝父相”：相对位置  和 绝对位置 一起使用
+
+3.bindtap事件的 event.currentTarget.dataset.valStr
+其中 valStr 在 xx.wxml中的书写方式 必须是小写字母不是驼峰式，比如：teamname，而不能是teamName
+https://blog.csdn.net/genius_yym/article/details/52904161?locationNum=2&fps=1

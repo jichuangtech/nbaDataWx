@@ -3,7 +3,7 @@
     "pages/schedule/schedule",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/scheduleDetail/scheduleDetail"
+    "pages/teamDetail/teamDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

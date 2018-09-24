@@ -13,7 +13,9 @@
 </view>
 
 <block wx:for="{{scheduleInfo}}"  wx:key="{{index}}">
-  <view class='scheduleLayout' bindtap='showDetailSchedule' data-team='{{item.name}}'>
+  <view class='scheduleLayout' bindtap='showTeamDetail' 
+    data-teamname='{{item.homeTeamName}}'
+    data-teamid='{{item.homeid}}'>
     <!-- 主队 -->
     <view class='scheduleItemSpan scheduleItemLeftSpan'>
       <view class='rangfenLayout'>

@@ -22,15 +22,18 @@ Page({
   },
 
   //获取被点击View所绑定的数据的方式
-  showDetailSchedule: function(event) {
+  showTeamDetail: function(event) {
+    var teamName = event.currentTarget.dataset.teamname;
+    var teamId = event.currentTarget.dataset.teamid;
+    console.log(" showTeamDetail teamName: " + teamName + ", teamId: " + teamId);
     wx.showToast({
-      title: event.currentTarget.dataset.team,
+      title: teamName,
       icon: 'success',
       duration: 2000
     });
 
     wx.navigateTo({
-      url: '../scheduleDetail/scheduleDetail'
+      url: '../teamDetail/teamDetail?teamName=' + teamName + "&teamId=" + teamId
     })
   },
 
