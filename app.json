@@ -1,12 +1,34 @@
 {
-  "pages":[
+  "pages": [
+    "pages/schedule/schedule",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/scheduleDetail/scheduleDetail"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3F51B5",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#7DAED2",
+    "selectedColor": "#fff",
+    "borderStyle": "#f00",
+    "backgroundColor": "#196FB2",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/icon/home_normal.png",
+        "selectedIconPath": "images/icon/home_pressed.png"
+      },
+      {
+        "pagePath": "pages/schedule/schedule",
+        "text": "赛程",
+        "iconPath": "images/icon/ball_normal.png",
+        "selectedIconPath": "images/icon/ball_pressed.png"
+      }
+    ]
   }
 }

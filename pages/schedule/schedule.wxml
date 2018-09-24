@@ -1,0 +1,59 @@
+<!--pages/schedule/schedule.wxml-->
+<view class='spaceLineColor topSpaceLayout'></view>
+
+<!-- 顶部的按钮区域 -->
+<view class="section topBgLayoutColor dateLayout">
+  <image class="navIcon leftNav" bindtap="onLeftNavClick" src='../../images/icon/left_nav_icon.png'/>
+  <picker class="pickLayout" mode="date" value="{{date}}" start="2013-09-01" bindchange="onDateChange">
+    <view class="picker dateTitile">
+      {{date}}
+    </view>
+  </picker>
+  <image class="navIcon rightNav" bindtap="onRightNavClick" src='../../images/icon/right_nav_icon.png'/>
+</view>
+
+<block wx:for="{{scheduleInfo}}"  wx:key="{{index}}">
+  <view class='scheduleLayout' bindtap='showDetailSchedule' data-team='{{item.name}}'>
+    <!-- 主队 -->
+    <view class='scheduleItemSpan scheduleItemLeftSpan'>
+      <view class='rangfenLayout'>
+        <text class='rangfenTv'>{{item.rangfen}}</text>
+      </view>
+      <image class="teamLogo" src='../../images/icon/ball_normal.png'/>
+      <text class='teamNameTv'>{{item.homeTeamName}}</text>
+    </view>
+
+    <!-- 信息 -->
+    <view class='scheduleItemSpan scheduleItemCentertSpan'>
+      <text class='matchStatusLayout' wx:if="{{1 == status}}">{{item.gametime}}</text>
+      <text class='matchStatusLayout' wx:elif="{{2 == status}}">比赛中</text>
+      <text class='matchStatusLayout' wx:elif="{{3 == status}}">已经结束</text>
+
+      <view class='scoreLayout'>
+        <text class='scoreTv'>{{item.homepoint}}</text>
+        <view class='degreeLayout'>
+          <block wx:for="{{3-0}}" wx:key="un">
+            <image class="starLogo" src='../../images/icon/star.png'/>
+          </block>
+        </view>
+        <text class='scoreTv'>{{item.awaypoint}}</text>
+      </view>
+
+      <text class='playTypeLayout'>全美直播</text>
+      <text catchtap="showGameProspect" class='gameStatusTv gameProspectLayout' wx:if="{{1 == status}}">比赛前瞻</text>
+      <text catchtap="liveGame" class='gameStatusTv gameInfoBtnLayout' wx:elif="{{2 == status}}">直播比赛</text>
+      <text catchtap="showGameStatus" class='gameStatusTv gameInfoBtnLayout' wx:elif="{{3 == status}}">比赛战报</text>
+    </view>
+ 
+
+    <!-- 客队 -->
+    <view class='scheduleItemSpan scheduleItemRightSpan'>
+      <image class="teamLogo" src='../../images/icon/ball_normal.png'/>
+      <text class='teamNameTv'>{{item.awayTeamName}}</text>
+    </view>
+   
+  </view>
+</block>
+
+
+

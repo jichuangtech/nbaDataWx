@@ -8,3 +8,24 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+
+.topBgLayoutColor {
+  background-color: #3F51B5;
+}
+
+.spaceColor {
+  background-color: #F6F6F6;
+}
+
+.spaceLineColor {
+  background-color: #DDDDDD;
+}
+
+.borderColor {
+  border-color: #DDDDDD;
+}
+
+.spaceLineView {
+  width: 100%;
+  height:1px;
+}

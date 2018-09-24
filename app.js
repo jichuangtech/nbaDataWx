@@ -1,4 +1,5 @@
 //app.js
+const config = require('config.js');
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -33,7 +34,17 @@ App({
       }
     })
   },
+
+  isSuccess: function (statusCode) {
+    return statusCode == 200;
+  },
+
+  isShouldLogin: function (statusCode) {
+    return statusCode == 101 || statusCode == 102;
+  },
+
   globalData: {
-    userInfo: null
-  }
+    config: config,
+    servicePhone: "17750224350",
+  },
 })
