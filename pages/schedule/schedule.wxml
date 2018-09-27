@@ -13,8 +13,8 @@
 </view>
 
 <block wx:for="{{scheduleInfo}}"  wx:key="{{index}}">
-  <view class='scheduleLayout' bindtap='showSheduleDetail' 
-    data-shedule-id='{{item.id}}'>
+  <view class='scheduleLayout' bindtap='showScheduleDetail' 
+    data-schedule-id='{{item.id}}'>
     <!-- 主队 -->
     <view class='scheduleItemSpan scheduleItemLeftSpan'>
       <view class='rangfenLayout'>

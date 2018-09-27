@@ -3,8 +3,8 @@
     "pages/schedule/schedule",
     "pages/scheduleDetail/scheduleDetail",
     "pages/index/index",
-    "pages/teamDetail/teamDetail"
-    
+    "pages/teamDetail/teamDetail",
+    "pages/articleDetail/articleDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

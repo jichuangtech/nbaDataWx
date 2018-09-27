@@ -31,7 +31,7 @@
       <view>
       <!-- 开始遍历新闻数据 -->
         <block wx:for="{{articles}}" wx:key="{{index}}">
-          <view>
+          <view bindtap='gotoArticleDetail' data-article-id="{{item.articleId}}">
             <text class='articleTv'>{{item.articleTitle}}</text>
               <image wx:if="{{item.articleAttachList.length == 0}}" src="../../images/no_pic.png"></image>
           <image wx:if="{{item.articleAttachList.length > 0}}"  src="{{photoDomain}}/api/info/picture/{{item.articleAttachList[0].attachUrl}}" />

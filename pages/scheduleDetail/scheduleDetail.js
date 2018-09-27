@@ -17,8 +17,8 @@ Page({
    */
   onLoad: function (options) {
     console.log(" onLoad options: " + JSON.stringify(options));
-    this.querySchedule(options.sheduleId);
-    this.queryArticles(options.sheduleId);
+    this.querySchedule(options.scheduleId);
+    this.queryArticles(options.scheduleId);
     // this.querySchedule("12707");
     // this.queryArticles("12707");
   },
@@ -86,6 +86,14 @@ Page({
         console.error(" 查询赛程信息错误...");
       }
     });
+  },
+
+  gotoArticleDetail: function(event) {
+    var articleId = event.currentTarget.dataset.articleId;
+    console.log(" gotoArticleDetail articleId: " + articleId);
+    wx.navigateTo({
+      url: '../articleDetail/articleDetail?articleId=' + articleId
+    })
   },
 
   /**

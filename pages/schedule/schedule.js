@@ -22,11 +22,11 @@ Page({
   },
 
   //获取被点击View所绑定的数据的方式
-  showSheduleDetail: function(event) {
-    var sheduleId = event.currentTarget.dataset.sheduleId;
-    console.log(" showSheduleDetail sheduleId: " + sheduleId);
+  showScheduleDetail: function(event) {
+    var scheduleId = event.currentTarget.dataset.scheduleId;
+    console.log(" showScheduleDetail scheduleId: " + scheduleId);
     wx.navigateTo({
-      url: '../scheduleDetail/scheduleDetail?sheduleId=' + sheduleId
+      url: '../scheduleDetail/scheduleDetail?scheduleId=' + scheduleId
     })
   },
 

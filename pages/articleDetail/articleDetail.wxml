@@ -1,0 +1,14 @@
+<!-- articleDetail.wxml-->
+
+<view>
+  <text>文章详情{{article.articleTitle}}</text>
+</view>
+
+<view>
+  <image wx:if="{{article.articleAttachList.length == 0}}"    src="../../images/no_pic.png"></image>
+          <image wx:if="{{article.articleAttachList.length > 0}}"  src="{{photoDomain}}/api/info/picture/{{article.articleAttachList[0].attachUrl}}" />
+</view>
+
+<view>
+  <text>{{article.articleContent}}</text>
+</view>
