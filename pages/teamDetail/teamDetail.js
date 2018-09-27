@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    teamId: 7,
+    teamName: "76人"
   },
 
   /**
@@ -13,6 +14,10 @@ Page({
    */
   onLoad: function (options) {
     console.log(" teamDetail options: " + JSON.stringify(options));
+    // this.setData({
+    //   teamId: options.teamId,
+    //   teamName: options.teamName
+    // });
   },
 
   /**

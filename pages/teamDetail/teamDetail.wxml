@@ -1,2 +1,7 @@
 <!--teamDetail.wxml-->
-<text>teamDetail.wxml</text>
+<!-- 顶部名字区域 -->
+<view class="topBgLayoutColor teamNameLayout">
+  <image class="navIcon leftNav" bindtap="back" src='../../images/icon/back.png'/>
+  <text>{{teamName}}</text>
+
+</view>

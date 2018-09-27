@@ -7,3 +7,10 @@
 3.bindtap事件的 event.currentTarget.dataset.valStr
 其中 valStr 在 xx.wxml中的书写方式 必须是小写字母不是驼峰式，比如：teamname，而不能是teamName
 https://blog.csdn.net/genius_yym/article/details/52904161?locationNum=2&fps=1
+
+dataset
+在组件中可以定义数据，这些数据将会通过事件传递给 SERVICE。 书写方式： 以data-开头，多个单词由连字符-链接，不能有大写(大写会自动转成小写)如data-element-type，最终在 event.currentTarget.dataset 中会将连字符转成驼峰elementType。
+参考官方说明：https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html
+
+4.实现 ViewPager + Tab的方式
+https://blog.csdn.net/lily2016n/article/details/78414306

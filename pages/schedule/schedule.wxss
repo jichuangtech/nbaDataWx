@@ -88,14 +88,6 @@
   color: white;
 }
 
-.teamLogo {
-  position: absolute;
-  top: 20%;
-  width: 100rpx;
-  height:100rpx;
-  
-}
-
 .teamNameTv {
   overflow:auto;
   white-space:nowrap;
@@ -105,9 +97,9 @@
   top: 68%;
 }
 
-.navIcon {
-  width: 20px;
-  height:20px;
+.teamLogoLayout {
+  position: absolute;
+  top: 20%;
 }
 
 .teamTime {

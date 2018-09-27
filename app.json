@@ -1,9 +1,10 @@
 {
-  "pages": [
+  "pages": [    
     "pages/schedule/schedule",
+    "pages/scheduleDetail/scheduleDetail",
     "pages/index/index",
-    "pages/logs/logs",
     "pages/teamDetail/teamDetail"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

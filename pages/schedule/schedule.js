@@ -22,18 +22,11 @@ Page({
   },
 
   //获取被点击View所绑定的数据的方式
-  showTeamDetail: function(event) {
-    var teamName = event.currentTarget.dataset.teamname;
-    var teamId = event.currentTarget.dataset.teamid;
-    console.log(" showTeamDetail teamName: " + teamName + ", teamId: " + teamId);
-    wx.showToast({
-      title: teamName,
-      icon: 'success',
-      duration: 2000
-    });
-
+  showSheduleDetail: function(event) {
+    var sheduleId = event.currentTarget.dataset.sheduleId;
+    console.log(" showSheduleDetail sheduleId: " + sheduleId);
     wx.navigateTo({
-      url: '../teamDetail/teamDetail?teamName=' + teamName + "&teamId=" + teamId
+      url: '../scheduleDetail/scheduleDetail?sheduleId=' + sheduleId
     })
   },
 
@@ -93,7 +86,7 @@ Page({
     console.log(" getSchedule show")
     var that = this;
     wx.request({
-      url: app.globalData.config.domain + '/api/matchResult/' + this.data.date,
+      url: app.globalData.config.domain + '/api/matchResult/byDate?date=' + this.data.date,
       header: {
         'content-type': 'application/json',
       },

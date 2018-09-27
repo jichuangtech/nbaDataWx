@@ -13,15 +13,14 @@
 </view>
 
 <block wx:for="{{scheduleInfo}}"  wx:key="{{index}}">
-  <view class='scheduleLayout' bindtap='showTeamDetail' 
-    data-teamname='{{item.homeTeamName}}'
-    data-teamid='{{item.homeid}}'>
+  <view class='scheduleLayout' bindtap='showSheduleDetail' 
+    data-shedule-id='{{item.id}}'>
     <!-- 主队 -->
     <view class='scheduleItemSpan scheduleItemLeftSpan'>
       <view class='rangfenLayout'>
         <text class='rangfenTv'>{{item.rangfen}}</text>
       </view>
-      <image class="teamLogo" src='../../images/icon/ball_normal.png'/>
+      <image class="teamLogoLayout teamLogoSize" src='../../images/icon/ball_normal.png'/>
       <text class='teamNameTv'>{{item.homeTeamName}}</text>
     </view>
 
@@ -50,7 +49,8 @@
 
     <!-- 客队 -->
     <view class='scheduleItemSpan scheduleItemRightSpan'>
-      <image class="teamLogo" src='../../images/icon/ball_normal.png'/>
+      <image class="teamLogoLayout teamLogoSize" 
+      src='../../images/icon/ball_normal.png'/>
       <text class='teamNameTv'>{{item.awayTeamName}}</text>
     </view>
    
