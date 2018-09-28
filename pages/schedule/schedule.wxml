@@ -18,7 +18,8 @@
     <!-- 主队 -->
     <view class='scheduleItemSpan scheduleItemLeftSpan'>
       <view class='rangfenLayout'>
-        <text class='rangfenTv'>{{item.rangfen}}</text>
+        <text class='rangfenTv' wx:if="{{item.rangfen > 0}}">+{{item.rangfen}}</text>
+        <text class='rangfenTv' wx:else>{{item.rangfen}}</text>
       </view>
       <image class="teamLogoLayout teamLogoSize" src='../../images/icon/ball_normal.png'/>
       <text class='teamNameTv'>{{item.homeTeamName}}</text>
