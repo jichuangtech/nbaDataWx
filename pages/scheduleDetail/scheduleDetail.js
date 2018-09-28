@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    status: 1,
     schedule:{},
     currentTab:0,
     articles:[],
@@ -17,10 +18,10 @@ Page({
    */
   onLoad: function (options) {
     console.log(" onLoad options: " + JSON.stringify(options));
-    this.querySchedule(options.scheduleId);
-    this.queryArticles(options.scheduleId);
-    // this.querySchedule("12707");
-    // this.queryArticles("12707");
+    // this.querySchedule(options.scheduleId);
+    // this.queryArticles(options.scheduleId);
+    this.querySchedule("12707");
+    this.queryArticles("12707");
   },
 
   queryArticles: function (scheduleId) {

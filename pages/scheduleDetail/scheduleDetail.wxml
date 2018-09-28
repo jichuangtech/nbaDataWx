@@ -1,19 +1,32 @@
 <!--pages/scheduleDetail/scheduleDetail.wxml-->
 <view class='scheduleInfoLayout'>
   <!-- 左 -->
-  <view class='scheduleInfoItemLayout'>
+  <view class='scheduleInfoItemLayout scheduleInfoLRItemLayout'>
     <image class="teamLogoSize" src='../../images/icon/ball_normal.png'/>
     <text class='teamNameTv'>{{schedule.homeTeamName}}</text>
   </view>
 
   <!-- 中 -->
-  <view class='scheduleInfoItemLayout'>
-    <text>{{schedule.gamedate}}</text>
-    <text>{{schedule.gametime}}</text>
+  <view class='scheduleInfoItemLayout scheduleInfoCenterItemLayout'>
+    <text class="scheduleStatusTipTv" wx:if="{{status == 1 || status == 2}}">全美直播</text>
+    <text class="scheduleStatusTipTv" wx:if="{{status == 3}}">已结束</text>
+
+    <!-- 时间 -->
+    <view class="scheduleTimeLayout" wx:if="{{status == 1 || status == 2}}">
+      <text class='scheduleTimeInfoTv'>{{schedule.gamedate}}</text>
+      <text class='scheduleTimeInfoTv'>{{schedule.gametime}}</text>
+    </view>
+
+    <!-- 比分 -->
+    <view class="scheduleScoreLayout" wx:if="{{status == 3}}">
+      <text class='scoreTv'>{{schedule.homepoint}}</text>
+      <text class='scoreTv'>{{schedule.awaypoint}}</text>
+    </view>
+
   </view>
 
   <!-- 右 -->
-  <view class='scheduleInfoItemLayout'>
+  <view class='scheduleInfoItemLayout scheduleInfoLRItemLayout'>
     <image class="teamLogoSize" src='../../images/icon/ball_normal.png'/>
     <text class='teamNameTv'>{{schedule.awayTeamName}}</text>
   </view>

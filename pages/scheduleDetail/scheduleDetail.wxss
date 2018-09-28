@@ -17,12 +17,52 @@ page{
   font-size: 30rpx;
 }
 
+.scheduleStatusTipTv {
+  width: 200rpx;
+  height: 20px;
+  color: rgba(0, 0, 0, 0.58);
+  font-size: 30rpx;
+  text-align: center;
+  font-family: PingFangSC-regular;
+  margin-top: 10rpx;
+  
+}
+
+.scheduleScoreLayout {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.scoreTv {
+  font-size: 60rpx;
+}
+
+.scheduleTimeLayout {
+  margin-top: 10rpx;
+}
+
+.scheduleTimeInfoTv {
+  display: block;
+  text-align: center;
+}
+
+.scheduleInfoCenterItemLayout {
+  width: 50%;
+  justify-content: flex-start;
+}
+
+.scheduleInfoLRItemLayout {
+  width: 25%;
+  justify-content: center;
+}
+
 .scheduleInfoItemLayout {
   display: inline-flex;
-  width: 33%;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  
 }
 
 .swiper-tab{
