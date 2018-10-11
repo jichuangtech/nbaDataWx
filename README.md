@@ -14,3 +14,16 @@ dataset
 
 4.实现 ViewPager + Tab的方式
 https://blog.csdn.net/lily2016n/article/details/78414306
+
+5. flex 布局的介绍：
+https://blog.csdn.net/zhaoweizheng66/article/details/50614003
+
+6.使用自定义组件关注以下几点：
+（1）类似SDK中 catch/bindtap 监听函数，在自定义组件的时候，需要为你的组件定义将要发生的事件，
+    比如会发生  say 事件，则 在引入你的自定义组件的父控件中，使用 
+    <customedView bindsay="xxxmethod" /> 来监听事件；
+    而customedView内部在监听SDK的事件或者也是监听其他自定义组件的事件后，进行本组件的事件的
+    触发，事件的触发涉及到函数 triggerEvent(event, detail, option);
+    event: 事件的名字；
+    detail:事件对外传递的参数；
+    option：事件床传递的类型；

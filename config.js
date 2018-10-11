@@ -1,5 +1,5 @@
-const ENV = 'product';
-// const ENV = 'dev';
+// const ENV = 'product';
+const ENV = 'dev';
 
 var config = function (ENV) {
   const config = {};

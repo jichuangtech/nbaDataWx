@@ -18,10 +18,18 @@ Page({
    */
   onLoad: function (options) {
     console.log(" onLoad options: " + JSON.stringify(options));
-    // this.querySchedule(options.scheduleId);
-    // this.queryArticles(options.scheduleId);
-    this.querySchedule("12707");
-    this.queryArticles("12707");
+     this.querySchedule(options.scheduleId);
+     this.queryArticles(options.scheduleId);
+    // this.querySchedule("12707");
+    // this.queryArticles("12707");
+  },
+
+  gotoTeamDetail: function(event) {
+    var teamId = event.currentTarget.dataset.teamId;
+    console.log("gotoTeamDetail teamId: " + teamId);
+    wx.navigateTo({
+      url: '../teamDetail/teamDetail?teamId=' + teamId,
+    })
   },
 
   queryArticles: function (scheduleId) {

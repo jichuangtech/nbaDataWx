@@ -2,7 +2,9 @@
 <view class='scheduleInfoLayout'>
   <!-- 左 -->
   <view class='scheduleInfoItemLayout scheduleInfoLRItemLayout'>
-    <image class="teamLogoSize" src='../../images/icon/ball_normal.png'/>
+    <image bindtap="gotoTeamDetail" 
+          data-team-id='{{schedule.homeid}}'
+        class="teamLogoSize" src='../../images/icon/ball_normal.png'/>
     <text class='teamNameTv'>{{schedule.homeTeamName}}</text>
   </view>
 
@@ -27,7 +29,9 @@
 
   <!-- 右 -->
   <view class='scheduleInfoItemLayout scheduleInfoLRItemLayout'>
-    <image class="teamLogoSize" src='../../images/icon/ball_normal.png'/>
+    <image bindtap="gotoTeamDetail" 
+          data-team-id='{{schedule.awayid}}'
+    class="teamLogoSize" src='../../images/icon/ball_normal.png'/>
     <text class='teamNameTv'>{{schedule.awayTeamName}}</text>
   </view>
 </view>

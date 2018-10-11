@@ -1,17 +1,115 @@
 /* teamDetail.wxss */
 
-.teamNameLayout {
-  display: flex;
-  color: white; 
-  font-size: 20px;
-  width: 100%;
-  height: 120rpx;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.teamNameTv {
+.swiper-tab {
+    width: 100%;
+    border-bottom: 2rpx solid #ccc;
+    text-align: center;
+    height: 68rpx;
+    line-height: 68rpx;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
 
+.basicDataTipTv {
+    width: 100%;
+    color: rgba(145, 134, 134, 1);
+    font-size: 18px;
+    text-align: left;
+    font-family: PingFangSC- regular;
+    line-height: 20px;
+    border: 1px solid rgba(255, 255, 255, 1);
+    padding-left: 15rpx;
+    margin-top: 10rpx;
+}
 
+.swiper-tab-item {
+    width: 30%;
+    color: white;
+    font-size: 37rpx;
+}
+
+.active {
+    border-bottom: 4rpx solid #f65959;
+}
+
+swiper {
+    flex: 1;
+    text-align: center;
+}
+
+/* parent 下面的所有view的样式 */
+
+swiper-item view {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.swiperItemRootView {
+    background-color: #F9F8F6;
+}
+
+.basicInfoLayout {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    height: 30%;
+}
+
+.teamDateInfoLayout {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    height: 30%;
+    margin-top: 45rpx;
+}
+
+.infoTextLayout {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+}
+
+.teamLogoLayout {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.teamLogo {
+    margin-top: 16%;
+    width: 140rpx;
+    height: 140rpx;
+}
+
+.basicInfoTitle {
+    color: rgba(145, 134, 134, 1);
+    font-size: 33rpx;
+    text-align: left;
+    font-family: PingFangSC-regular;
+    padding-left: 30rpx;
+    margin-top: 5rpx;
+}
+
+.titleDivider {
+    background: #e4e4e4;
+    width: 100%;
+    height: 5rpx;
+    margin-bottom: 8rpx;
+    margin-top: 8rpx;
+}
+
+.infoLayoutDivider {
+    background: #f9f6f4;
+    width: 100%;
+    height: 30rpx;
 }

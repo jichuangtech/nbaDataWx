@@ -1,0 +1,24 @@
+/* components/teamInfoItemText/teamInfoItemText.wxss */
+
+.rootView {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 6rpx;
+}
+
+.titleText {
+    text-align: right;
+    margin-right: 40rpx;
+    flex: 0.5;
+}
+
+.valueText {    
+    text-align: left;
+    flex: 0.8;
+}
+
+.text {
+    font-family: PingFangSC-regular;
+    color: rgba(16, 16, 16, 1);
+    font-size: 27rpx;
+}
