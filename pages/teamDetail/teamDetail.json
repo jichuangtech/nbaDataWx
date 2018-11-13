@@ -1,5 +1,6 @@
 {
     "usingComponents": {
-        "teamInfoItemText" : "../../components/teamInfoItemText/teamInfoItemText"
+        "teamInfoItemText" : "../../components/teamInfoItemText/teamInfoItemText",
+        "teamDataItemText": "../../components/teamDataItemText/teamDataItemText"
     }
 }

@@ -1,0 +1,31 @@
+/* components/teamDataItemText/teamDataItemText.wxss */
+
+.rootView {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dataText {
+    width: 100%;
+    color: rgba(16, 16, 16, 1);
+    font-size: 30px;
+    text-align: center;
+    font-family: PingFangSC-regular;
+}
+
+.categoryText {
+    width: 100%;
+    color: rgba(16, 16, 16, 1);
+    font-size: 14px;
+    text-align: center;
+    font-family: PingFangSC-regular;
+}
+
+.rangeText {
+    width: 100%;
+    color: rgba(0, 0, 0, 0.58);
+    font-size: 14px;
+    text-align: center;
+    font-family: PingFangSC-regular;
+}

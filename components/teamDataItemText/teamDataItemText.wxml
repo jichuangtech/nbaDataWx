@@ -1,0 +1,6 @@
+<!--components/teamDataItemText/teamDataItemText.wxml-->
+<view class='rootView'>
+    <text class='dataText'>{{data}}</text>
+    <text class='categoryText'>{{category}}</text>
+    <text class='rangeText'>{{range}}</text>
+</view>

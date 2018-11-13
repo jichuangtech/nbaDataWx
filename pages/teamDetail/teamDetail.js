@@ -1,13 +1,18 @@
 // teamDetail.js
 var app = getApp();
 Page({
-    
 
     /**
      * 页面的初始数据
      */
     data: {
         currentTab: 0,
+        years: ['2016-2017', '2017-2018', '2018-2019'],
+        yearIndex: 0,
+        matchkinds: ["常规赛", "季后赛", "季前赛"],
+        matchkindIndex: 0,
+        teamStat:[],
+        teamSummary: "待补充中"
     },
 
     clickTab: function(event) {
@@ -27,6 +32,26 @@ Page({
         });
     },
 
+    onYearChange: function(event) {
+        console.log(" onYearChange event: " + JSON.stringify(event));
+        this.setData({
+            yearIndex: event.detail.value
+        }, this.refreshTeamStateInfo);
+    },
+
+    onMatchKindChange: function(event) {
+        console.log(" onMatchKindChange event: " + JSON.stringify(event));
+        this.setData({
+            matchkindIndex: event.detail.value
+        }, this.refreshTeamStateInfo);
+    },
+
+    refreshTeamStateInfo: function() {
+        console.log(" refreshTeamDataInfo ... ")
+        this.queryTeamStat(21,
+            this.data.years[this.data.yearIndex],
+            parseInt(this.data.matchkindIndex) + 1);
+    },
 
     /**
      * 生命周期函数--监听页面加载
@@ -36,11 +61,39 @@ Page({
         console.log(" teamDetail teamId: " + teamId);
         // this.queryTeam(teamId);
         this.queryTeam(21);
+
+        this.refreshTeamStateInfo();
     },
 
     onTitleCallback: function(e) {
         console.log(" teamDetail onTitleCallback ... e: " + JSON.stringify(e));
         this.cocachItem.say("你好");
+    },
+
+    queryTeamStat(teamId, season, matchKind) {
+        console.log(" queryTeamStat teamId: " + teamId +
+            ", season: " + season +
+            ", matchKind: " + matchKind);
+        var that = this;
+        wx.request({
+            url: app.globalData.config.domain + '/api/teamSate/byTeamIdAndSeason?teamId=' + teamId + "&season=" + season + "&matchKind=" + matchKind,
+            header: {
+                'content-type': 'application/json',
+            },
+            method: 'GET',
+            success: function(res) {
+                console.log(" queryTeamStat success: " + JSON.stringify(res.data));
+                that.setData({
+                    teamStat: res.data.data
+                });
+                wx.setNavigationBarTitle({
+                    title: that.data.team.shortname,
+                })
+            },
+            fail: function() {
+                console.error(" 查询球队数据失败...");
+            }
+        });
     },
 
     queryTeam: function(teamId) {
@@ -62,7 +115,7 @@ Page({
                 })
             },
             fail: function() {
-                console.error(" 查询赛程信息错误...");
+                console.error(" 查询球队信息错误...");
             }
         });
     },

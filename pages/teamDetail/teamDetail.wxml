@@ -5,6 +5,7 @@
     <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">球队赛程</view>
     <view class="swiper-tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">球队资讯</view>
 </view>
+
 <!-- 下面是Tab的内容 -->
 <swiper current="{{currentTab}}" duration="300" bindchange="swiperTab">
     <!-- 球队资料 -->
@@ -14,7 +15,7 @@
             <view class='basicInfoLayout'>
                 <text class='basicInfoTitle'>基本资料</text>
                 <view class='titleDivider' />
-                <view  style='display:flex; flex-direction: row;'>
+                <view style='display:flex; flex-direction: row;'>
 
                     <!-- logo区域 -->
                     <view class='teamLogoLayout'>
@@ -33,21 +34,73 @@
             </view>
 
             <!-- 球队数据 -->
-            <view class='teamDateInfoLayout'>
+            <view class='teamStateLayout'>
+                <!-- 顶部 -->
+                <view style='display:flex; flex-direction: row; height:50rpx;'>
+                    <text style="flex:1" class='basicInfoTitle'>球队数据</text>
+
+                    <view style='display:flex; flex-direction: row;justify-content: flex-end; flex:1;'>
+                        <!-- 比赛类型 -->
+                        <picker class="pickLayout" range="{{matchkinds}}" bindchange="onMatchKindChange" mode="selector">
+                            <view class="pickerTitle">
+                                {{matchkinds[matchkindIndex]}}
+                            </view>
+                            <image style="width:15rpx; height:15rpx;" src='../../images/icon/down.png' />
+                        </picker>
+
+                        <!-- 比赛赛季 -->
+                        <picker class="pickLayout" range="{{years}}" bindchange="onYearChange" mode="selector">
+                            <view class="pickerTitle">
+                                {{years[yearIndex]}}
+                            </view>
+                            <image style="width:15rpx; height:15rpx;" src='../../images/icon/down.png' />
+                        </picker>
+                    </view>
+                </view>
+                <view class='titleDivider' />
+                <text wx:if="{{teamStat == null}}">
+                    查询数据错误
+                </text>
+                <!-- 排名那部分 -->
+                <view class='rangeLayout' wx:if="{{teamStat != null}}">
+                    <teamDataItemText class="teamDateInfoLayout" data="{{teamStat.pts}}" category="得分" />
+                    <teamDataItemText class="teamDateInfoLayout" data="{{teamStat.losepts}}" category="失分" />
+                    <teamDataItemText class="teamDateInfoLayout" data="{{teamStat.rpg}}" category="篮板" />
+                    <teamDataItemText class="teamDateInfoLayout" data="{{teamStat.apg}}" category="助攻" />
+                </view>
+                <view class='rangeLayout' wx:if="{{teamStat != null}}">
+                    <teamDataItemText class="teamDateInfoLayout" data="{{teamStat.spg}}" category="抢断" />
+                    <teamDataItemText class="teamDateInfoLayout" data="{{teamStat.bpg}}" category="盖帽" />
+                    <teamDataItemText class="teamDateInfoLayout" data="{{teamStat.tpg}}" category="失误" />
+                    <teamDataItemText class="teamDateInfoLayout" data="{{teamStat.fpg}}" category="犯规" />
+                </view>
             </view>
 
+            <!-- 球队简介 -->
+            <view class='teamSummaryLayout'>
+                <text class='basicInfoTitle'>球队简介</text>
+                <view class='titleDivider' />
+                <text class='teamSummaryText'>
+                    {{teamSummary}}
+                </text>
+            </view>
         </view>
     </swiper-item>
+    <!-- 球队资料 end -->
 
     <!-- 球队赛程 -->
     <swiper-item>
         <view>提现中</view>
     </swiper-item>
+    <!-- 球队赛程 end -->
 
     <!-- 球队资讯 -->
     <swiper-item>
         <view class='underDevelopLayout'>
             <text class='underDevelopTv'>敬请期待</text>
+
         </view>
     </swiper-item>
+    <!-- 球队资讯 end -->
+
 </swiper>

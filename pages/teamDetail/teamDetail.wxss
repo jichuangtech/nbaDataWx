@@ -55,22 +55,18 @@ swiper-item view {
 }
 
 .swiperItemRootView {
-    background-color: #F9F8F6;
-}
-
-.basicInfoLayout {
     display: flex;
+    background-color: #f9f8f6;
+    flex: 1;
     flex-direction: column;
-    background: white;
-    height: 30%;
 }
 
 .teamDateInfoLayout {
     display: flex;
     flex-direction: column;
     background: white;
-    height: 30%;
-    margin-top: 45rpx;
+    height: 20%;
+    margin-top: 35rpx;
 }
 
 .infoTextLayout {
@@ -112,4 +108,68 @@ swiper-item view {
     background: #f9f6f4;
     width: 100%;
     height: 30rpx;
+}
+
+.pickLayout {
+    display: flex;
+    font-size: 20rpx;
+    text-align: center;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20rpx;
+}
+
+.pickerTitle {
+    display: inline;
+    text-align: center;
+    font-size: 30rpx;
+}
+
+.rangeLayout {
+    display: flex;
+    flex-direction: row;
+    height: 40%;
+}
+
+.teamDateInfoLayout {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* 基本资料 */
+
+.basicInfoLayout {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    height: 25%;
+}
+
+/* 球队数据 */
+
+.teamStateLayout {
+    display: flex;
+    flex-direction: column;
+    height: 40%;
+    background: white;
+    margin-top: 35rpx;
+}
+
+/* 球队简介 */
+
+.teamSummaryLayout {
+    display: flex;
+    flex-direction: column;
+    height: 32%;
+    background: white;
+    margin-top: 35rpx;
+}
+
+.teamSummaryText {
+    color: rgba(16, 16, 16, 1);
+    font-size: 16px;
+    text-align: left;
+    font-family: PingFangSC-regular;
 }
