@@ -90,7 +90,14 @@
 
     <!-- 球队赛程 -->
     <swiper-item>
-        <view>提现中</view>
+        <view class='swiperItemRootView'>
+            <scroll-view style="height: 100%" scroll-y="true" bindscrolltolower="onScrolltolower">
+                <block wx:key="id" wx:for="{{testData}}">
+                    <view  class='testTv'>{{item}}</view>
+                </block>
+            </scroll-view>
+
+        </view>
     </swiper-item>
     <!-- 球队赛程 end -->
 

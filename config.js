@@ -1,5 +1,5 @@
-// const ENV = 'product';
-const ENV = 'dev';
+const ENV = 'product';
+// const ENV = 'dev';
 
 var config = function (ENV) {
   const config = {};
@@ -13,7 +13,6 @@ var config = function (ENV) {
       config.domain = 'http://localhost:8070';
       break;
     default:
-      config.domain = 'https://www.ktvme.com';
       break;
   }
   return config;

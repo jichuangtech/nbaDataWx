@@ -11,8 +11,9 @@ Page({
         yearIndex: 0,
         matchkinds: ["常规赛", "季后赛", "季前赛"],
         matchkindIndex: 0,
-        teamStat:[],
-        teamSummary: "待补充中"
+        teamStat: [],
+        teamSummary: "待补充中",
+        testData: [1, 2, 3, 4, 5, 6, 7, 8, 9]
     },
 
     clickTab: function(event) {
@@ -86,14 +87,22 @@ Page({
                 that.setData({
                     teamStat: res.data.data
                 });
-                wx.setNavigationBarTitle({
-                    title: that.data.team.shortname,
-                })
+
             },
             fail: function() {
                 console.error(" 查询球队数据失败...");
             }
         });
+    },
+
+    onScrolltolower: function(e) {
+
+        var tmpData = this.data.testData.concat(this.data.testData);
+        
+        console.log("底部 tmpData" + JSON.stringify(tmpData));
+        this.setData({
+            testData: tmpData
+        })
     },
 
     queryTeam: function(teamId) {
@@ -109,10 +118,12 @@ Page({
                 console.log(" queryTeam success: " + JSON.stringify(res.data));
                 that.setData({
                     team: res.data.data
+                }, function() {
+                    wx.setNavigationBarTitle({
+                        title: that.data.team.shortname,
+                    })
                 });
-                wx.setNavigationBarTitle({
-                    title: that.data.team.shortname,
-                })
+
             },
             fail: function() {
                 console.error(" 查询球队信息错误...");

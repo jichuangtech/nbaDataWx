@@ -5,6 +5,7 @@
         "pages/scheduleDetail/scheduleDetail",
         "pages/index/index",
         "pages/articleDetail/articleDetail"
+        
     ],
     "window": {
         "backgroundTextStyle": "light",

@@ -173,3 +173,14 @@ swiper-item view {
     text-align: left;
     font-family: PingFangSC-regular;
 }
+
+/* 下面是球队赛程的 */
+.testTv {
+    height: 50px;
+    margin-top: 20px;
+    background: #f00;
+}
+
+.schedule {
+    height: 200px;
+}

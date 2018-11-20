@@ -27,3 +27,16 @@ https://blog.csdn.net/zhaoweizheng66/article/details/50614003
     event: 事件的名字；
     detail:事件对外传递的参数；
     option：事件床传递的类型；
+
+7.对于小程序将内容转化为图片，并且进行转发的功能，可以做如下实现方式：
+1.
+（1）通过 Canvas来 绘制内容；
+    wx.createCanvasContext('canvasId').draw();
+（2）然后保存到本地相册中；
+    wx.canvasToTempFilePath();
+（3）再将生成的图片显示在<img>，再进行预览，接着长按发送给用户；
+    wx.previewImage();
+
+2.通过截图的功能，将界面的制定区域的内容截图下来，再手动选择相册的内容发送给用户；
+
+3.通过 java 语言后端生成图片的方式：https://blog.csdn.net/tds411255224/article/details/83054543
